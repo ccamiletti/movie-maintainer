@@ -1,4 +1,4 @@
-FROM jenkins/jenkins
+FROM jenkins/jenkins:jdk11
 USER root
 RUN mkdir /var/log/jenkins
 RUN mkdir /var/cache/jenkins
