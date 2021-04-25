@@ -1,23 +1,22 @@
-version: '3'
+version: "3"
 services:
-#  sonarqube:
-#    container_name: sonarqube
-#    image: sonarqube:6.7-alpine
-#    ports:
-#    - 9000:9000
-#    - 9092:9092
-#    network_mode: host
+  sonarqube:
+    container_name: sonarqube
+    image: sonarqube:6.7-alpine
+    ports:
+      - 9000:9000
+      - 9092:9092
+    network_mode: host
 
   jenkins:
-  #  image: jenkins:latest
-    build: ../app/docker/jenkins/.
-    privileged: true
+    #  image: jenkins:latest
+    build: jenkins/.
     user: root
     ports:
-    - 7070:8080
+      - 1010:8080
     container_name: jenkins
     volumes:
-    - /tmp/jenkins:/var/jenkins_home #Remember that, the tmp directory is designed to be wiped on system reboot.
-    - /var/run/docker.sock:/var/run/docker.sock
-    # depends_on:
-    #- sonarqube
+      - /tmp/jenkins:/var/jenkins_home #Remember that, the tmp directory is designed to be wiped on system reboot.
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - sonarqube
