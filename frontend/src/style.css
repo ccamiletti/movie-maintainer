@@ -1,0 +1,14 @@
+label,
+select,
+button {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.body_center{
+    align-items: center;
+    text-align: center;
+}

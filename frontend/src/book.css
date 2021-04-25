@@ -1,0 +1,9 @@
+.center {
+  margin: 0 auto;
+  width: 40%;
+}
+form {
+  margin: 0 auto;
+  width: 1000px; /*find your value*/
+  text-align: center;
+}
